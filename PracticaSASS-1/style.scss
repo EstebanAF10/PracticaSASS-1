@@ -1,0 +1,113 @@
+@use 'variables';
+
+@mixin font-01($size, $weight){
+    font-family: 'Raleway';
+    font-size: $size+rem;
+    font-weight: $weight;
+}
+
+@mixin font-02($size, $weight){
+    font-family: 'Poppins';
+    font-size: $size+rem;
+    font-weight: $weight;
+}
+
+%button {
+    
+        display: inline-flex;
+        text-decoration: none;
+        @include font-01(1.25, 400);
+        padding: 1.5em 1em 1.5em 3.3em;
+        border-radius: 10em;
+        box-shadow: 1px 4px 7px #c6c6c6;
+        margin: 1em;
+
+}
+
+.button-one{
+    @extend %button;
+    background: variables.$main-color;
+    color: #fff;
+
+}
+
+.button-two{
+    @extend %button;
+    background: #fcfcfc;
+    color: variables.$main-color;
+
+}
+
+.shop-button{
+    position: absolute;
+    right: 5em;
+    top: 5em;
+}
+
+
+h1{
+    @include font-02(3.25, 700); 
+    color: #000000;
+    margin-top: 1em;
+}
+
+.container{
+    display: grid;
+    justify-content: start;
+    margin: 0 4em 0 7em;
+}
+
+.inner-grid{
+    margin: auto;
+}
+
+.inner-col{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 5em;
+}
+
+.main-title{
+    @include font-02(4.18, 700);
+    margin-top: 2em;
+    color: black;
+    margin-bottom: 0.3em;
+}
+
+.description{
+    @include font-02(3.12, 500);
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    color: #000000;
+}
+
+.detailed-description{
+    @include font-01(1.37, 400);
+    margin-top: 0.3em;
+    color: variables.$secondary-color;
+    line-height: 300%;
+}
+
+h4{
+    @include font-01(1.37, 700);
+    color: #000000;
+    margin: 3em 0 0.3em 0;
+}
+
+h5{
+    @include font-01(1.37, 400);
+    color: variables.$secondary-color;
+    margin-bottom: 0em;
+}
+
+.vertical-line{
+    border-left: 10px solid variables.$main-color;;
+    height: 348px;
+    position: absolute;
+    margin: 8em 0em 4em -2em;
+}
+
+.arrow{
+    position:absolute;
+    margin-left: 8em;;
+}
